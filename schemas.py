@@ -31,3 +31,12 @@ class InferenciaSchema(BaseModel):
             }
         }
     }
+
+class HealthSchema (BaseModel):
+    status: str = Field(
+        ...,
+        description="Estado geral do serviço.")
+        
+    modelo_carregado: bool = Field(
+        ...,
+        description="Indica se o modelo de ML reside corretamente na memória RAM.")

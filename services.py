@@ -1,4 +1,3 @@
-#from fastapi import APIRouter, UploadFile, File, HTTPException
 import io
 import cv2
 import numpy as np

@@ -26,11 +26,11 @@ def executar_inferencia(modelo, imagem_inferir):
     
     predicao = modelo.predict(imagem_inferir)
     resultado = int(predicao[0])
-    confianca = round(np.max(modelo.predict_proba(imagem_inferir))*100,2)
+    probabilidade = round(np.max(modelo.predict_proba(imagem_inferir))*100,2)
 
     return {
         "digito_inferido": resultado,
-        "confiança": confianca
+        "probabilidade": probabilidade
     }
 
 def carregar_imagem_upload(contents: bytes) -> np.ndarray:

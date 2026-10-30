@@ -1,4 +1,4 @@
-from fastapi import APIRouter, UploadFile, File, HTTPException
+#from fastapi import APIRouter, UploadFile, File, HTTPException
 import io
 import cv2
 import numpy as np
@@ -22,17 +22,15 @@ def carregar_modelo():
     modelo_carregado = pickle.loads(pesos_binarios)
     return modelo_carregado
 
-modelo = carregar_modelo()
-
-def executar_inferencia(imagem_inferir):
+def executar_inferencia(modelo, imagem_inferir):
     
     predicao = modelo.predict(imagem_inferir)
     resultado = int(predicao[0])
-    probabilidade = round(np.max(modelo.predict_proba(imagem_inferir))*100,2)
+    confianca = round(np.max(modelo.predict_proba(imagem_inferir))*100,2)
 
     return {
         "digito_inferido": resultado,
-        "probabilidade": probabilidade
+        "confiança": confianca
     }
 
 def carregar_imagem_upload(contents: bytes) -> np.ndarray:

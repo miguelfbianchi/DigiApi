@@ -13,7 +13,7 @@ async def ciclo_de_vida (app: FastAPI):
     yield
 
     print ("Desligando o servidor e limpando a memória")
-    del app.state.modelo_treinado
+    del app.state.modelo
     
 app = FastAPI(
     title = "API de Reconhecimento de dígitos",

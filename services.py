@@ -6,6 +6,9 @@ import math
 import sqlite3
 import pickle
 
+# Módulo com os serviços da aplicação, a serem chamados via rotas
+
+# Função que carrega o modelo salvo no banco de dados, desserializa e grava em memória RAM
 def carregar_modelo():
     conn = sqlite3.connect("digia_banco.db")
     cursor = conn.cursor()
@@ -21,6 +24,7 @@ def carregar_modelo():
     modelo_carregado = pickle.loads(pesos_binarios)
     return modelo_carregado
 
+# Exdecuta a inferência / predição propriamente dita
 def executar_inferencia(modelo, imagem_inferir):
     
     predicao = modelo.predict(imagem_inferir)
@@ -37,6 +41,7 @@ def carregar_imagem_upload(contents: bytes) -> np.ndarray:
     matriz_unidimensional = np.frombuffer(contents, dtype=np.uint8)
     # A flag IMREAD_GRAYSCALE garante que a imagem seja decodificada exatamente em tons de cinza e bidimensional
     return cv2.imdecode(matriz_unidimensional, cv2.IMREAD_GRAYSCALE)
+
 
 def processa_digito_manual(img: np.ndarray):
   

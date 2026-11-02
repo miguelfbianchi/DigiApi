@@ -22,7 +22,7 @@ class InferenciaSchema(BaseModel):
         examples=[98.42]
     )
 
-    # Configuração de metadados para documentação do Swagger UI
+    # Configuração de metadados para documentação do Swagger
     model_config = {
         "json_schema_extra": {
             "example": {

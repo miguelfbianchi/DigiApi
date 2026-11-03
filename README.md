@@ -29,7 +29,12 @@ A arquitetura do projeto foi construída utilizando ferramentas baseadas em Pyth
 
 Siga os comandos abaixo no seu terminal para clonar, configurar o ambiente e executar o servidor localmente.
 
-### 4.1 Criação do Ambiente Virtual (venv)
+### 4.1 Clonagem do repositório
+```bash
+git clone git@github.com:miguelfbianchi/DigiApi.git
+```
+
+### 4.2 Criação do Ambiente Virtual (venv)
 No diretório raiz do projeto, execute o comando para isolar as dependências:
 ```bash
 # No Linux/MacOS:
@@ -41,15 +46,10 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 4.2 Instalação das Dependências
+### 4.3 Instalação das Dependências
 Com o seu ambiente `.venv` ativado, instale todas as bibliotecas necessárias listadas no manifesto:
 ```bash
 pip install -r requirements.txt
-```
-
-### 4.3 Clonagem do repositório
-```bash
-git clone git@github.com:miguelfbianchi/DigiApi.git
 ```
 
 ### 4.4 Treinamento e serialização do modelo
@@ -125,4 +125,4 @@ python consumo_api.py data/08.jpg
 
 Como parte dos resultados esperados e critérios de avaliação do Projeto Avaliativo, o link abaixo dá acesso à demonstração do ecossistema funcionando de ponta a ponta:
 
-* 🎬 **Vídeo de Demonstração e Defesa Técnica:** [Link do Google Drive Aqui] *(Substitua este texto pelo link em modo leitor quando gerar o vídeo)*
+* 🎬 **Vídeo de Demonstração:** [[Clique Aqui](https://drive.google.com/file/d/1-T68J702ETgs61_wI8vmaXlzHsSKH-oD/view?usp=sharing)]
